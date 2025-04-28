@@ -24,13 +24,15 @@ theme: /
           a: Удачи!
           a: Всего хорошего!
 
+    state: Match
+        event!: match
+        a: {{$context.intent.answer}}
+        
     state: NoMatch
         event!: noMatch
         a: Извините, я не понял:( Вы сказали: {{$request.query}}
 
-    state: Match
-        event!: match
-        a: {{$context.intent.answer}}
+    
         
     state: weather
         q!: * (~погода/~прогноз/завтра/дождь/расскажи о погоде/будет ли завтра дождь)*
